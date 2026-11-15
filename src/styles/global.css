@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Soft-green theme: sage background, white cards, a lime primary and pastel tints.
+ * All values are HSL triplets consumed as hsl(var(--token)).
+ *
+ * Text contrast: --primary (lime) is only used as a FILL with dark text on top.
+ * Use --brand (dark green) whenever green must be readable as text or as a thin graphic.
+ */
+@layer base {
+  :root {
+    --background: 100 22% 93%;
+    --foreground: 120 12% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 12% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 12% 9%;
+
+    --primary: 98 52% 72%;
+    --primary-foreground: 120 25% 10%;
+
+    --secondary: 100 22% 91%;
+    --secondary-foreground: 120 12% 12%;
+
+    --muted: 100 18% 95%;
+    --muted-foreground: 110 8% 36%;
+
+    --accent: 98 45% 90%;
+    --accent-foreground: 120 25% 12%;
+
+    --brand: 105 42% 28%;
+
+    --destructive: 0 65% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 140 45% 26%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 32 90% 30%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 100 14% 86%;
+    --input: 105 8% 56%;
+    --ring: 105 42% 32%;
+
+    --radius: 1rem;
+
+    /* Pastel card tints */
+    --tint-lime: 85 60% 91%;
+    --tint-mint: 150 42% 90%;
+    --tint-teal: 175 40% 90%;
+    --tint-blue: 210 58% 93%;
+    --tint-pink: 350 75% 94%;
+    --tint-yellow: 55 75% 89%;
+
+    /* Chart palette (used via hsl(var(--chart-n))) */
+    --chart-1: 105 42% 30%;
+    --chart-2: 95 45% 40%;
+    --chart-3: 172 40% 40%;
+    --chart-4: 208 50% 56%;
+    --chart-5: 350 58% 64%;
+    --chart-6: 42 85% 40%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+    font-variant-numeric: tabular-nums; /* keeps Rupiah columns aligned */
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Visually hidden */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
